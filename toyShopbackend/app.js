@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 
 var mongoose = require('mongoose');
-
+// mongodb+srv://dbUser:dbUserPassword@newcluster.qhp4574.mongodb.net/?retryWrites=true&w=majority
 mongoose.connect('mongodb://localhost:27017/toyStoreApplication')
   .then(() => console.log('Connected!'));
 

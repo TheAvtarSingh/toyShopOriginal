@@ -1,0 +1,269 @@
+<section class="page-header" id="page-header">
+    <div class="overly"></div> 	
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="content text-center">
+            <h1 class="mb-3">Product Details</h1>
+           
+  
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb bg-transparent justify-content-center">
+              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Product Details</li>
+            </ol>
+          </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="single-product">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="single-product-slider">
+            <div class="carousel slide" data-ride="carousel" id="single-product-slider">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{{productDetails.url}}" alt="" class="img-fluid">
+                </div>
+                
+              </div>
+  
+              
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-7">
+          <div class="single-product-details mt-5 mt-lg-0">
+            <h2>{{productDetails.Product_Title}}</h2>
+            <div class="sku_wrapper mb-4">
+              Product ID : <span class="text-muted">{{productDetails._id}}</span>
+            </div>
+  
+            <hr>
+            
+            <h3 class="product-price"> &#8377;  {{productDetails.Price}}</h3>
+            
+            <p class="product-description my-4 ">
+              {{productDetails.Product_Description}}
+            </p>
+  
+            <form class="cart" action="#" method="post">
+              <div class="quantity d-flex align-items-center">
+                <input type="number" id="#" class="input-text qty text form-control w-25 mr-3" step="1" min="1" max="9" name="quantity" value="1" title="Qty" size="4" >
+                <a href="/cart" class="btn btn-main btn-small">Add to cart</a>
+              </div>
+            </form>
+  
+            
+            
+  
+            <!-- <div class="product-size d-flex align-items-center mt-4">
+              <span class="font-weight-bold text-capitalize product-meta-title">Size:</span>
+              <select class="form-control">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+            </div> -->
+  
+            <div class="products-meta mt-4">
+              <div class="product-category d-flex align-items-center">
+                <span class="font-weight-bold text-capitalize product-meta-title">Categories :</span>
+                <a href="#">Category : {{productDetails.category}}</a> <br>
+
+                <a href="#">Gender Played By : {{productDetails.gender_played_by}}</a>
+              </div>
+  
+              <div class="product-share mt-5">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <a href="#"><i class="tf-ion-social-facebook"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><i class="tf-ion-social-twitter"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><i class="tf-ion-social-linkedin"></i></a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#"><i class="tf-ion-social-pinterest"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="product-info-tabs wc-tabs mt-5 mb-5">
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="/product-single/{{productDetails._id}}/#page-header" role="tab" aria-controls="nav-home" aria-selected="true">Description</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="/product-single/{{productDetails._id}}/#nav-tabContent" role="tab" aria-controls="nav-profile" aria-selected="false">Additional Information</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="/product-single/{{productDetails._id}}/#nav-tabContent" role="tab" aria-controls="nav-contact" aria-selected="false">Reviews ({{productDetails.reviewsCount}})</a>
+            </div>
+          </nav>
+  
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p>{{productDetails.Product_Description}}</p>
+  
+            
+  
+            </div>
+            
+  
+                <div class="media review-block" style="width: 100% ;height:100%;">
+                  <img src="{{productDetails.url}}" alt="reviewimg" class="img-fluid mr-4">
+                  <div class="media-body">
+                    <div class="product-review">
+                      <span><i class="tf-ion-android-star"></i></span>
+                      <span><i class="tf-ion-android-star"></i></span>
+                      <span><i class="tf-ion-android-star"></i></span>
+                      <span><i class="tf-ion-android-star"></i></span>
+                      <span><i class="tf-ion-android-star-outline"></i></span>
+                    </div>
+                    <h6>Avtar Singh<span class="text-sm text-muted font-weight-normal ml-3">June 23, 2019</span></h6>
+                    <p>{{productDetails.reviews}}</p>
+                  </div>	
+                </div>
+              </div>
+  
+  
+              <div class="col-lg-5">
+                <div class="review-comment mt-5 mt-lg-0">
+                  <h4 class="mb-3">Add a Review</h4>
+  
+                  <form action="put" >
+                    <div class="starrr"></div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                      <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                      <textarea name="comment" id="comment" class="form-control" cols="30" rows="4" placeholder="Your Review"></textarea>
+                    </div>
+  
+                    <a [routerLink]="['/thanks_for_Review',productDetails._id]" class="btn btn-main btn-small">Submit Review</a>
+                  </form>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+     
+  </section>
+  
+  
+  <section class="products related-products section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="title text-center">
+            <h2>You may like this</h2>
+            <p>The best Online sales to shop these weekend</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-3 col-6" >
+                <div class="product">
+            <div class="product-wrap">
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
+            </div>
+  
+            <span class="onsale">Sale</span>
+            <div class="product-hover-overlay">
+              <a href="#"><i class="tf-ion-android-cart"></i></a>
+              <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                  </div>
+  
+            <div class="product-info">
+              <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Kirby Shirt</a></h2>
+              <span class="price">
+                $329.10
+              </span>
+            </div>
+          </div>
+           </div>
+  
+        <div class="col-lg-3 col-6" >
+                <div class="product">
+            <div class="product-wrap">
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg" alt="product-img" /></a>
+            </div>
+  
+            <span class="onsale">Sale</span>
+            <div class="product-hover-overlay">
+              <a href="#"><i class="tf-ion-android-cart"></i></a>
+              <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                  </div>
+  
+            <div class="product-info">
+              <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Kirby Shirt</a></h2>
+              <span class="price">
+                $329.10
+              </span>
+            </div>
+          </div>
+           </div>
+  
+  
+        <div class="col-lg-3 col-6" >
+                <div class="product">
+            <div class="product-wrap">
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/111.jpg" alt="product-img" /></a>
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/322.jpg" alt="product-img" /></a>
+            </div>
+  
+            <span class="onsale">Sale</span>
+            <div class="product-hover-overlay">
+              <a href="#"><i class="tf-ion-android-cart"></i></a>
+              <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                  </div>
+  
+            <div class="product-info">
+              <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Kirby Shirt</a></h2>
+              <span class="price">
+                $329.10
+              </span>
+            </div>
+          </div>
+           </div>
+  
+        <div class="col-lg-3 col-6">
+                <div class="product">
+            <div class="product-wrap">
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/444.jpg" alt="product-img" /></a>
+              <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/222.jpg" alt="product-img" /></a>
+            </div>
+  
+            <span class="onsale">Sale</span>
+            <div class="product-hover-overlay">
+              <a href="#"><i class="tf-ion-android-cart"></i></a>
+              <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                  </div>
+  
+            <div class="product-info">
+              <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Kirby Shirt</a></h2>
+              <span class="price">
+                $329.10
+              </span>
+            </div>
+          </div>
+           </div>
+      </div>
+    </div>
+  </section>

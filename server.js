@@ -1,5 +1,5 @@
 const {MongoClient} = require('mongodb')
-const url= 'mongodb://localhost:27017';
+const url= 'mongodb+srv://toyShop:Avtar123@toyshopcluster.iulurni.mongodb.net/?retryWrites=true&w=majority';
 const databaseName='toyStoreApplication'
 const client= new MongoClient(url);
 
