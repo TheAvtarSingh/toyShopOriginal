@@ -27,7 +27,7 @@
     "http": "0.0.1-security",
     "jquery": "^3.6.2",
     "mongodb": "^4.12.1",
-    "mongoose": "^6.8.0",
+    "mongoose": "^6.11.3",
     "ngx-slick-carousel": "^0.6.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "npkill": "^0.10.0",
